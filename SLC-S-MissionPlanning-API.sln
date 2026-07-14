@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.6.11822.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPack", "SLC-S-MissionPlanning-API\DevPack.csproj", "{AA785CF6-4B91-47B0-872F-AD4C7A55A65A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharedMappers", "SharedMappers\SharedMappers.shproj", "{593AF88E-7F19-4C88-8F30-819CA0412230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPack.Installer", "DevPack.Installer\DevPack.Installer.csproj", "{764A8041-EF9B-4E6D-8BE0-61C667273B8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{1B9FF0EF-BB02-44B5-9229-302960331DA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analysis", "{F6E4FF8F-2B33-421A-B688-CB9747A23DCE}"
+	ProjectSection(SolutionItems) = preProject
+		Internal\Code Analysis\qaction-debug.ruleset = Internal\Code Analysis\qaction-debug.ruleset
+		Internal\Code Analysis\qaction-release.ruleset = Internal\Code Analysis\qaction-release.ruleset
+		Internal\Code Analysis\stylecop.json = Internal\Code Analysis\stylecop.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA785CF6-4B91-47B0-872F-AD4C7A55A65A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA785CF6-4B91-47B0-872F-AD4C7A55A65A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA785CF6-4B91-47B0-872F-AD4C7A55A65A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA785CF6-4B91-47B0-872F-AD4C7A55A65A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{764A8041-EF9B-4E6D-8BE0-61C667273B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{764A8041-EF9B-4E6D-8BE0-61C667273B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{764A8041-EF9B-4E6D-8BE0-61C667273B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{764A8041-EF9B-4E6D-8BE0-61C667273B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F6E4FF8F-2B33-421A-B688-CB9747A23DCE} = {1B9FF0EF-BB02-44B5-9229-302960331DA9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F40FA0A9-426D-433C-9287-0C272853B33F}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		SharedMappers\SharedMappers.projitems*{593af88e-7f19-4c88-8f30-819ca0412230}*SharedItemsImports = 13
+		SharedMappers\SharedMappers.projitems*{764a8041-ef9b-4e6d-8be0-61c667273b8a}*SharedItemsImports = 5
+		SharedMappers\SharedMappers.projitems*{aa785cf6-4b91-47b0-872f-ad4c7a55a65a}*SharedItemsImports = 5
+	EndGlobalSection
+EndGlobal
