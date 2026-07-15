@@ -666,15 +666,7 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 
 		private DomInstance ToInstance(Mission obj)
 		{
-			Guid id = default(Guid);
-			if (!String.IsNullOrEmpty(obj.Identifier))
-			{
-				id = Guid.Parse(obj.Identifier);
-			}
-			else
-			{
-				id = Guid.NewGuid();
-			}
+			Guid id = GetIdentifierGuid(obj.Identifier);
 
 			var instance = new DomInstance
 			{
@@ -686,9 +678,11 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 			};
 			if (obj.Administrative != null)
 			{
+				Guid administrativeId = GetIdentifierGuid(obj.Administrative.Identifier);
+
 				var _administrative = new Section(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.Administrative.SectionDefinitionId)
 				{
-					ID = new SectionID(System.Guid.Parse(obj.Administrative.Identifier))
+					ID = new SectionID(administrativeId)
 				};
 				if (obj.Administrative.MissionID != default)
 				{
@@ -726,9 +720,10 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 
 			if (obj.CoalitionAndMultinationalContext != null)
 			{
+				Guid coalitionAndMultinationalContextId = GetIdentifierGuid(obj.CoalitionAndMultinationalContext.Identifier);
 				var _coalitionandmultinationalcontext = new Section(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.CoalitionAndMultinationalContext.SectionDefinitionId)
 				{
-					ID = new SectionID(System.Guid.Parse(obj.CoalitionAndMultinationalContext.Identifier))
+					ID = new SectionID(coalitionAndMultinationalContextId)
 				};
 				if (obj.CoalitionAndMultinationalContext.CoalitionFlag != default)
 				{
@@ -751,9 +746,10 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 
 			if (obj.PriorityAndImportance != null)
 			{
+				Guid priorityAndImportanceId = GetIdentifierGuid(obj.PriorityAndImportance.Identifier);
 				var _priorityandimportance = new Section(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.PriorityAndImportance.SectionDefinitionId)
 				{
-					ID = new SectionID(System.Guid.Parse(obj.PriorityAndImportance.Identifier))
+					ID = new SectionID(priorityAndImportanceId)
 				};
 				_priorityandimportance.AddOrUpdateValue<int>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.PriorityAndImportance.Priority, (int)obj.PriorityAndImportance.Priority);
 				_priorityandimportance.AddOrUpdateValue<int>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.PriorityAndImportance.Criticality, (int)obj.PriorityAndImportance.Criticality);
@@ -762,9 +758,10 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 
 			if (obj.GeographicalArea != null)
 			{
+				Guid geographicalAreaId = GetIdentifierGuid(obj.GeographicalArea.Identifier);
 				var _geographicalarea = new Section(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.GeographicalArea.SectionDefinitionId)
 				{
-					ID = new SectionID(System.Guid.Parse(obj.GeographicalArea.Identifier))
+					ID = new SectionID(geographicalAreaId)
 				};
 				if (obj.GeographicalArea.AreaOfOperations != default)
 				{
@@ -781,9 +778,10 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 
 			foreach (var services in obj.Services)
 			{
+				Guid servicesId = GetIdentifierGuid(services.Identifier);
 				var _servicesSection = new Section(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.Services.SectionDefinitionId)
 				{
-					ID = new SectionID(System.Guid.Parse(services.Identifier))
+					ID = new SectionID(servicesId)
 				};
 				if (services.ServiceID != default)
 				{
@@ -932,6 +930,21 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 				default:
 					throw new NotImplementedException();
 			}
+		}
+
+		private Guid GetIdentifierGuid(string identifier)
+		{
+			Guid id = default(Guid);
+			if (!String.IsNullOrEmpty(identifier))
+			{
+				id = Guid.Parse(identifier);
+			}
+			else
+			{
+				id = Guid.NewGuid();
+			}
+
+			return id;
 		}
 	}
 }

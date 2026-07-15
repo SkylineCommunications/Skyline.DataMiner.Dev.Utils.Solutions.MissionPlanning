@@ -5,8 +5,8 @@
     <Nullable>disable</Nullable>
     <AssemblyName>Skyline.DataMiner.Dev.Utils.Solutions.MissionPlanning</AssemblyName>
     <RootNamespace>Skyline.DataMiner.Solutions.MissionPlanning</RootNamespace>
-    <PackageVersion>1.0.1</PackageVersion>
-    <Version>1.0.1</Version>
+    <PackageVersion>1.0.2-fix</PackageVersion>
+    <Version>1.0.2-fix</Version>
     <PackageTags>Skyline;DataMiner</PackageTags>
     <PackageProjectUrl>https://skyline.be</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>

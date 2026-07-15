@@ -97,35 +97,35 @@ namespace DevPack.Installer.DOM
 		{
 			Log("Installing Administrative section...");
 			var section = new SectionDefinitionBuilder()
-				.WithID(AdministrativeDomMapper.AdministrativeProperties.SectionDefinitionId)
+				.WithID(MissionDomMapper.Administrative.SectionDefinitionId)
 				.WithName("Administrative")
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(AdministrativeDomMapper.AdministrativeProperties.MissionID)
-					.WithName(nameof(AdministrativeDomMapper.AdministrativeProperties.MissionID))
+					.WithID(MissionDomMapper.Administrative.MissionID)
+					.WithName(nameof(MissionDomMapper.Administrative.MissionID))
 					.WithType(typeof(string))
 					.WithIsOptional(false)
 					.WithTooltip("The unique identifier for the mission."))
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(AdministrativeDomMapper.AdministrativeProperties.MissionCode)
-					.WithName(nameof(AdministrativeDomMapper.AdministrativeProperties.MissionCode))
+					.WithID(MissionDomMapper.Administrative.MissionCode)
+					.WithName(nameof(MissionDomMapper.Administrative.MissionCode))
 					.WithType(typeof(string))
 					.WithIsOptional(false)
 					.WithTooltip("The mission code used for reference and identification purposes."))
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(AdministrativeDomMapper.AdministrativeProperties.MissionName)
-					.WithName(nameof(AdministrativeDomMapper.AdministrativeProperties.MissionName))
+					.WithID(MissionDomMapper.Administrative.MissionName)
+					.WithName(nameof(MissionDomMapper.Administrative.MissionName))
 					.WithType(typeof(string))
 					.WithIsOptional(false)
 					.WithTooltip("The display name of the mission."))
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(AdministrativeDomMapper.AdministrativeProperties.MissionDescription)
-					.WithName(nameof(AdministrativeDomMapper.AdministrativeProperties.MissionDescription))
+					.WithID(MissionDomMapper.Administrative.MissionDescription)
+					.WithName(nameof(MissionDomMapper.Administrative.MissionDescription))
 					.WithType(typeof(string))
 					.WithIsOptional(true)
 					.WithTooltip("The detailed description of the mission."))
 				.AddFieldDescriptor(new GenericEnumFieldDescriptorBuilder()
-					.WithID(AdministrativeDomMapper.AdministrativeProperties.MissionCategory)
-					.WithName(nameof(AdministrativeDomMapper.AdministrativeProperties.MissionCategory))
+					.WithID(MissionDomMapper.Administrative.MissionCategory)
+					.WithName(nameof(MissionDomMapper.Administrative.MissionCategory))
 					.WithIsOptional(false)
 					.WithTooltip("The category classification of the mission.")
 					.WithEnumType(GenericEnumFieldDescriptorBuilder.EnumType.Int)
@@ -143,49 +143,49 @@ namespace DevPack.Installer.DOM
 					.AddEnumValue(new GenericEnumEntry<int>(nameof(MissionCategory.CyberOperation), (int)MissionCategory.CyberOperation))
 					.AddEnumValue(new GenericEnumEntry<int>(nameof(MissionCategory.Support), (int)MissionCategory.Support)))
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(AdministrativeDomMapper.AdministrativeProperties.MissionStart)
-					.WithName(nameof(AdministrativeDomMapper.AdministrativeProperties.MissionStart))
+					.WithID(MissionDomMapper.Administrative.MissionStart)
+					.WithName(nameof(MissionDomMapper.Administrative.MissionStart))
 					.WithType(typeof(DateTime))
 					.WithIsOptional(false)
 					.WithTooltip("The start date and time of the mission."))
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(AdministrativeDomMapper.AdministrativeProperties.MissionEnd)
-					.WithName(nameof(AdministrativeDomMapper.AdministrativeProperties.MissionEnd))
+					.WithID(MissionDomMapper.Administrative.MissionEnd)
+					.WithName(nameof(MissionDomMapper.Administrative.MissionEnd))
 					.WithType(typeof(DateTime))
 					.WithIsOptional(false)
 					.WithTooltip("The end date and time of the mission."))
 				.Build();
 
-			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(AdministrativeDomMapper.AdministrativeProperties.SectionDefinitionId.Id), section);
+			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(MissionDomMapper.Administrative.SectionDefinitionId.Id), section);
 		}
 
 		private void InstallCoalitionAndMultinationalContextSection(DomHelper helper)
 		{
 			Log("Installing CoalitionAndMultinationalContext section...");
 			var section = new SectionDefinitionBuilder()
-				.WithID(CoalitionAndMultinationalContextDomMapper.CoalitionAndMultinationalContextProperties.SectionDefinitionId)
+				.WithID(MissionDomMapper.CoalitionAndMultinationalContext.SectionDefinitionId)
 				.WithName("Coalition And Multinational Context")
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(CoalitionAndMultinationalContextDomMapper.CoalitionAndMultinationalContextProperties.CoalitionFlag)
-					.WithName(nameof(CoalitionAndMultinationalContextDomMapper.CoalitionAndMultinationalContextProperties.CoalitionFlag))
+					.WithID(MissionDomMapper.CoalitionAndMultinationalContext.CoalitionFlag)
+					.WithName(nameof(MissionDomMapper.CoalitionAndMultinationalContext.CoalitionFlag))
 					.WithType(typeof(bool))
 					.WithIsOptional(false)
 					.WithTooltip("Indicates whether this context involves a coalition."))
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(CoalitionAndMultinationalContextDomMapper.CoalitionAndMultinationalContextProperties.CoalitionName)
-					.WithName(nameof(CoalitionAndMultinationalContextDomMapper.CoalitionAndMultinationalContextProperties.CoalitionName))
+					.WithID(MissionDomMapper.CoalitionAndMultinationalContext.CoalitionName)
+					.WithName(nameof(MissionDomMapper.CoalitionAndMultinationalContext.CoalitionName))
 					.WithType(typeof(string))
 					.WithIsOptional(true)
 					.WithTooltip("The name of the coalition."))
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(CoalitionAndMultinationalContextDomMapper.CoalitionAndMultinationalContextProperties.ParticipatingNations)
-					.WithName(nameof(CoalitionAndMultinationalContextDomMapper.CoalitionAndMultinationalContextProperties.ParticipatingNations))
+					.WithID(MissionDomMapper.CoalitionAndMultinationalContext.ParticipatingNations)
+					.WithName(nameof(MissionDomMapper.CoalitionAndMultinationalContext.ParticipatingNations))
 					.WithType(typeof(string))
 					.WithIsOptional(true)
 					.WithTooltip("The participating nations in the coalition."))
 				.AddFieldDescriptor(new GenericEnumFieldDescriptorBuilder()
-					.WithID(CoalitionAndMultinationalContextDomMapper.CoalitionAndMultinationalContextProperties.LeadNation)
-					.WithName(nameof(CoalitionAndMultinationalContextDomMapper.CoalitionAndMultinationalContextProperties.LeadNation))
+					.WithID(MissionDomMapper.CoalitionAndMultinationalContext.LeadNation)
+					.WithName(nameof(MissionDomMapper.CoalitionAndMultinationalContext.LeadNation))
 					.WithIsOptional(true)
 					.WithTooltip("The lead nation of the coalition.")
 					.WithEnumType(GenericEnumFieldDescriptorBuilder.EnumType.Int)
@@ -223,18 +223,18 @@ namespace DevPack.Installer.DOM
 					.AddEnumValue(new GenericEnumEntry<int>(nameof(LeadNation.UnitedStates), (int)LeadNation.UnitedStates)))
 				.Build();
 
-			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(CoalitionAndMultinationalContextDomMapper.CoalitionAndMultinationalContextProperties.SectionDefinitionId.Id), section);
+			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(MissionDomMapper.CoalitionAndMultinationalContext.SectionDefinitionId.Id), section);
 		}
 
 		private void InstallPriorityAndImportanceSection(DomHelper helper)
 		{
 			Log("Installing Priority And Importance section...");
 			var section = new SectionDefinitionBuilder()
-				.WithID(PriorityAndImportanceDomMapper.PriorityAndImportanceProperties.SectionDefinitionId)
+				.WithID(MissionDomMapper.PriorityAndImportance.SectionDefinitionId)
 				.WithName("Priority And Importance")
 				.AddFieldDescriptor(new GenericEnumFieldDescriptorBuilder()
-					.WithID(PriorityAndImportanceDomMapper.PriorityAndImportanceProperties.Priority)
-					.WithName(nameof(PriorityAndImportanceDomMapper.PriorityAndImportanceProperties.Priority))
+					.WithID(MissionDomMapper.PriorityAndImportance.Priority)
+					.WithName(nameof(MissionDomMapper.PriorityAndImportance.Priority))
 					.WithIsOptional(false)
 					.WithTooltip("The priority level of the mission.")
 					.WithEnumType(GenericEnumFieldDescriptorBuilder.EnumType.Int)
@@ -243,8 +243,8 @@ namespace DevPack.Installer.DOM
 					.AddEnumValue(new GenericEnumEntry<int>(nameof(MissionPriority.High), (int)MissionPriority.High))
 					.AddEnumValue(new GenericEnumEntry<int>(nameof(MissionPriority.Strategic), (int)MissionPriority.Strategic)))
 				.AddFieldDescriptor(new GenericEnumFieldDescriptorBuilder()
-					.WithID(PriorityAndImportanceDomMapper.PriorityAndImportanceProperties.Criticality)
-					.WithName(nameof(PriorityAndImportanceDomMapper.PriorityAndImportanceProperties.Criticality))
+					.WithID(MissionDomMapper.PriorityAndImportance.Criticality)
+					.WithName(nameof(MissionDomMapper.PriorityAndImportance.Criticality))
 					.WithIsOptional(false)
 					.WithTooltip("The criticality level of the mission.")
 					.WithEnumType(GenericEnumFieldDescriptorBuilder.EnumType.Int)
@@ -255,55 +255,55 @@ namespace DevPack.Installer.DOM
 					.AddEnumValue(new GenericEnumEntry<int>(nameof(MissionCriticality.NationalCritical), (int)MissionCriticality.NationalCritical)))
 				.Build();
 
-			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(PriorityAndImportanceDomMapper.PriorityAndImportanceProperties.SectionDefinitionId.Id), section);
+			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(MissionDomMapper.PriorityAndImportance.SectionDefinitionId.Id), section);
 		}
 
 		private void InstallGeographicalAreaSection(DomHelper helper)
 		{
 			Log("Installing Geographical Area section...");
 			var section = new SectionDefinitionBuilder()
-				.WithID(GeographicalAreaDomMapper.GeographicalAreaProperties.SectionDefinitionId)
+				.WithID(MissionDomMapper.GeographicalArea.SectionDefinitionId)
 				.WithName("Geographical Area")
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(GeographicalAreaDomMapper.GeographicalAreaProperties.AreaOfOperations)
-					.WithName(nameof(GeographicalAreaDomMapper.GeographicalAreaProperties.AreaOfOperations))
+					.WithID(MissionDomMapper.GeographicalArea.AreaOfOperations)
+					.WithName(nameof(MissionDomMapper.GeographicalArea.AreaOfOperations))
 					.WithType(typeof(string))
 					.WithIsOptional(true)
 					.WithTooltip("The area of operations associated with this geographical area."))
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(GeographicalAreaDomMapper.GeographicalAreaProperties.MobilityProfiles)
-					.WithName(nameof(GeographicalAreaDomMapper.GeographicalAreaProperties.MobilityProfiles))
+					.WithID(MissionDomMapper.GeographicalArea.MobilityProfiles)
+					.WithName(nameof(MissionDomMapper.GeographicalArea.MobilityProfiles))
 					.WithType(typeof(string))
 					.WithIsOptional(true)
 					.WithTooltip("The mobility profiles associated with this geographical area."))
 				.Build();
 
-			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(GeographicalAreaDomMapper.GeographicalAreaProperties.SectionDefinitionId.Id), section);
+			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(MissionDomMapper.GeographicalArea.SectionDefinitionId.Id), section);
 		}
 
 		private void InstallServiceSection(DomHelper helper)
 		{
 			Log("Installing Service section...");
 			var section = new SectionDefinitionBuilder()
-				.WithID(ServiceDomMapper.ServiceProperties.SectionDefinitionId)
+				.WithID(MissionDomMapper.Services.SectionDefinitionId)
 				.WithName("Service")
 				.AddFieldDescriptor(new DomInstanceFieldDescriptorBuilder()
-					.WithID(ServiceDomMapper.ServiceProperties.ServiceID)
-					.WithName(nameof(ServiceDomMapper.ServiceProperties.ServiceID))
+					.WithID(MissionDomMapper.Services.ServiceID)
+					.WithName(nameof(MissionDomMapper.Services.ServiceID))
 					.WithType(typeof(Guid))
 					.WithIsOptional(false)
 					.WithModule(ServiceManagementModuleId)
 					.WithDefinitions(new[] { new DomDefinitionId(new Guid(ServicesDefinitionId)) })
 					.WithTooltip("The unique identifier of the service."))
 				.AddFieldDescriptor(new FieldDescriptorBuilder()
-					.WithID(ServiceDomMapper.ServiceProperties.Name)
-					.WithName(nameof(ServiceDomMapper.ServiceProperties.Name))
+					.WithID(MissionDomMapper.Services.Name)
+					.WithName(nameof(MissionDomMapper.Services.Name))
 					.WithType(typeof(string))
 					.WithIsOptional(false)
 					.WithTooltip("The name of the service."))
 				.AddFieldDescriptor(new DomInstanceFieldDescriptorBuilder()
-					.WithID(ServiceDomMapper.ServiceProperties.Profile)
-					.WithName(nameof(ServiceDomMapper.ServiceProperties.Profile))
+					.WithID(MissionDomMapper.Services.Profile)
+					.WithName(nameof(MissionDomMapper.Services.Profile))
 					.WithType(typeof(Guid))
 					.WithIsOptional(false)
 					.WithModule(ServiceManagementModuleId)
@@ -311,7 +311,7 @@ namespace DevPack.Installer.DOM
 					.WithTooltip("The unique identifier of the profile associated with the service."))
 				.Build();
 
-			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(ServiceDomMapper.ServiceProperties.SectionDefinitionId.Id), section);
+			Import(helper.SectionDefinitions, SectionDefinitionExposers.ID.Equal(MissionDomMapper.Services.SectionDefinitionId.Id), section);
 		}
 
 		#endregion
@@ -325,37 +325,37 @@ namespace DevPack.Installer.DOM
 				.WithName("Mission")
 				.AddSectionDefinitionLink(new SectionDefinitionLink
 				{
-					SectionDefinitionID = AdministrativeDomMapper.AdministrativeProperties.SectionDefinitionId,
+					SectionDefinitionID = MissionDomMapper.Administrative.SectionDefinitionId,
 					AllowMultipleSections = false,
 					IsOptional = false,
 					IsSoftDeleted = false,
 				})
 				.AddSectionDefinitionLink(new SectionDefinitionLink
 				{
-					SectionDefinitionID = PriorityAndImportanceDomMapper.PriorityAndImportanceProperties.SectionDefinitionId,
+					SectionDefinitionID = MissionDomMapper.PriorityAndImportance.SectionDefinitionId,
 					AllowMultipleSections = false,
 					IsOptional = false,
 					IsSoftDeleted = false,
 				})
 				.AddSectionDefinitionLink(new SectionDefinitionLink
 				{
-					SectionDefinitionID = CoalitionAndMultinationalContextDomMapper.CoalitionAndMultinationalContextProperties.SectionDefinitionId,
+					SectionDefinitionID = MissionDomMapper.CoalitionAndMultinationalContext.SectionDefinitionId,
 					AllowMultipleSections = false,
 					IsOptional = false,
 					IsSoftDeleted = false,
 				})
 				.AddSectionDefinitionLink(new SectionDefinitionLink
 				{
-					SectionDefinitionID = GeographicalAreaDomMapper.GeographicalAreaProperties.SectionDefinitionId,
+					SectionDefinitionID = MissionDomMapper.GeographicalArea.SectionDefinitionId,
 					AllowMultipleSections = false,
 					IsOptional = false,
 					IsSoftDeleted = false,
 				})
 				.AddSectionDefinitionLink(new SectionDefinitionLink
 				{
-					SectionDefinitionID = ServiceDomMapper.ServiceProperties.SectionDefinitionId,
+					SectionDefinitionID = MissionDomMapper.Services.SectionDefinitionId,
 					AllowMultipleSections = true,
-					IsOptional = false,
+					IsOptional = true,
 					IsSoftDeleted = false,
 				})
 				.Build();
@@ -380,9 +380,21 @@ namespace DevPack.Installer.DOM
 
 		#endregion
 
+		#region Behaviors
 		private void InstallBehaviorDefinition(DomHelper helper)
 		{
 			Log("Installing Mission behavior definition...");
+			var fieldDescriptorLinks = new List<DomStatusFieldDescriptorLink>
+			{
+				new DomStatusFieldDescriptorLink(MissionDomMapper.Administrative.MissionID),
+				new DomStatusFieldDescriptorLink(MissionDomMapper.Administrative.MissionCode),
+				new DomStatusFieldDescriptorLink(MissionDomMapper.Administrative.MissionName),
+				new DomStatusFieldDescriptorLink(MissionDomMapper.Administrative.MissionDescription),
+				new DomStatusFieldDescriptorLink(MissionDomMapper.Administrative.MissionCategory),
+				new DomStatusFieldDescriptorLink(MissionDomMapper.Administrative.MissionStart),
+				new DomStatusFieldDescriptorLink(MissionDomMapper.Administrative.MissionEnd),
+			};
+
 			var behaviorDefinition = new DomBehaviorDefinition()
 			{
 				ID = new DomBehaviorDefinitionId(missionBehaviorDefinitionId),
@@ -398,70 +410,25 @@ namespace DevPack.Installer.DOM
 				InitialStatusId = "draft",
 				StatusSectionDefinitionLinks = new List<DomStatusSectionDefinitionLink>()
 				{
-					new DomStatusSectionDefinitionLink(new DomStatusSectionDefinitionLinkId("draft", AdministrativeDomMapper.AdministrativeProperties.SectionDefinitionId))
+					new DomStatusSectionDefinitionLink(new DomStatusSectionDefinitionLinkId("draft", MissionDomMapper.Administrative.SectionDefinitionId))
 					{
-						FieldDescriptorLinks = new List<DomStatusFieldDescriptorLink>
-						{
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionID),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionCode),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionName),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionDescription),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionCategory),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionStart),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionEnd),
-						},
+						FieldDescriptorLinks = fieldDescriptorLinks,
 					},
-					new DomStatusSectionDefinitionLink(new DomStatusSectionDefinitionLinkId("confirmed", AdministrativeDomMapper.AdministrativeProperties.SectionDefinitionId))
+					new DomStatusSectionDefinitionLink(new DomStatusSectionDefinitionLinkId("confirmed", MissionDomMapper.Administrative.SectionDefinitionId))
 					{
-						FieldDescriptorLinks = new List<DomStatusFieldDescriptorLink>
-						{
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionID),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionCode),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionName),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionDescription),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionCategory),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionStart),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionEnd),
-						},
+						FieldDescriptorLinks = fieldDescriptorLinks,
 					},
-					new DomStatusSectionDefinitionLink(new DomStatusSectionDefinitionLinkId("active", AdministrativeDomMapper.AdministrativeProperties.SectionDefinitionId))
+					new DomStatusSectionDefinitionLink(new DomStatusSectionDefinitionLinkId("active", MissionDomMapper.Administrative.SectionDefinitionId))
 					{
-						FieldDescriptorLinks = new List<DomStatusFieldDescriptorLink>
-						{
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionID),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionCode),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionName),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionDescription),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionCategory),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionStart),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionEnd),
-						},
+						FieldDescriptorLinks = fieldDescriptorLinks,
 					},
-					new DomStatusSectionDefinitionLink(new DomStatusSectionDefinitionLinkId("completed", AdministrativeDomMapper.AdministrativeProperties.SectionDefinitionId))
+					new DomStatusSectionDefinitionLink(new DomStatusSectionDefinitionLinkId("completed", MissionDomMapper.Administrative.SectionDefinitionId))
 					{
-						FieldDescriptorLinks = new List<DomStatusFieldDescriptorLink>
-						{
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionID),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionCode),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionName),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionDescription),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionCategory),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionStart),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionEnd),
-						},
+						FieldDescriptorLinks = fieldDescriptorLinks,
 					},
-					new DomStatusSectionDefinitionLink(new DomStatusSectionDefinitionLinkId("deprecated", AdministrativeDomMapper.AdministrativeProperties.SectionDefinitionId))
+					new DomStatusSectionDefinitionLink(new DomStatusSectionDefinitionLinkId("deprecated", MissionDomMapper.Administrative.SectionDefinitionId))
 					{
-						FieldDescriptorLinks = new List<DomStatusFieldDescriptorLink>
-						{
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionID),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionCode),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionName),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionDescription),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionCategory),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionStart),
-							new DomStatusFieldDescriptorLink(AdministrativeDomMapper.AdministrativeProperties.MissionEnd),
-						},
+						FieldDescriptorLinks = fieldDescriptorLinks,
 					},
 				},
 				StatusTransitions = new List<DomStatusTransition>()
@@ -482,6 +449,8 @@ namespace DevPack.Installer.DOM
 
 			Import(helper.DomBehaviorDefinitions, DomBehaviorDefinitionExposers.Id.Equal(behaviorDefinition.ID), behaviorDefinition);
 		}
+
+		#endregion
 
 		private void InstallAllSections(DomHelper helper)
 		{
