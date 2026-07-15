@@ -20,10 +20,13 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 	using Skyline.DataMiner.Net.Sections;
 	using Skyline.DataMiner.Net.SubscriptionFilters;
 	using Skyline.DataMiner.SDM;
+	using Skyline.DataMiner.Solutions.MissionPlanning.SDM.Exposers;
 	using Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models;
 
 	using SLDataGateway.API.Querying;
 	using SLDataGateway.API.Types.Querying;
+
+	using MissionExposers = Exposers.MissionExposers;
 
 	internal partial class MissionDomRepository : IBulkRepository<Mission>
 	{
