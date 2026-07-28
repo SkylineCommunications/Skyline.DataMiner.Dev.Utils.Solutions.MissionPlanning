@@ -15,7 +15,7 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models
         };
         internal static DomDefinitionId DomDefinitionId => MissionDomDefinitionId;
 
-        public static class Administrative
+		public static class Administrative
         {
             private static readonly SectionDefinitionID sectionDefinitionId = new SectionDefinitionID(new Guid("d0916055-8a2f-459c-b701-c1c3076cc797"))
             {

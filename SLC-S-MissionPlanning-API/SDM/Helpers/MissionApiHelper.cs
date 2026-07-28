@@ -1,4 +1,6 @@
-﻿using Skyline.DataMiner.Net;
+﻿using System;
+
+using Skyline.DataMiner.Net;
 using Skyline.DataMiner.SDM;
 using Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models;
 using Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission;
@@ -21,6 +23,16 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Helpers
 		public IConnection Connection { get; }
 
 		public IBulkRepository<Mission> Missions { get { return _missions; } }
+
+		public Guid GetMissionDefinitionId()
+		{
+			return MissionDomMapper.DomDefinitionId.Id;
+		}
+
+		public string GetMissionModule()
+		{
+			return MissionDomMapper.ModuleId;
+		}
 
 		//public void Test()
 		//{

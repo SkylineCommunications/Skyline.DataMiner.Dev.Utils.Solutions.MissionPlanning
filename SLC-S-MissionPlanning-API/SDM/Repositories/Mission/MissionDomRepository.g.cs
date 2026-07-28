@@ -512,7 +512,11 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 
 		private Mission FromInstance(DomInstance instance)
 		{
-			var obj = new Mission();
+			var obj = new Mission()
+			{
+				Identifier = instance.ID.Id.ToString()
+			};
+
 			var _administrativeSection = instance.Sections.FirstOrDefault(s => s.SectionDefinitionID.Equals(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.Administrative.SectionDefinitionId));
 			if (_administrativeSection != default)
 			{
@@ -667,7 +671,7 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 			return obj;
 		}
 
-		private DomInstance ToInstance(Mission obj)
+		private DomInstance  ToInstance(Mission obj)
 		{
 			Guid id = GetIdentifierGuid(obj.Identifier);
 
@@ -728,10 +732,8 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 				{
 					ID = new SectionID(coalitionAndMultinationalContextId)
 				};
-				if (obj.CoalitionAndMultinationalContext.CoalitionFlag != default)
-				{
-					_coalitionandmultinationalcontext.AddOrUpdateValue<bool>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.CoalitionAndMultinationalContext.CoalitionFlag, (bool)obj.CoalitionAndMultinationalContext.CoalitionFlag);
-				}
+
+				_coalitionandmultinationalcontext.AddOrUpdateValue<bool>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.CoalitionAndMultinationalContext.CoalitionFlag, (bool)obj.CoalitionAndMultinationalContext.CoalitionFlag);
 
 				if (obj.CoalitionAndMultinationalContext.CoalitionName != default)
 				{
