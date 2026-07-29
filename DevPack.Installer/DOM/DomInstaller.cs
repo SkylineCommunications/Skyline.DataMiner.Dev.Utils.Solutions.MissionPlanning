@@ -305,7 +305,7 @@ namespace DevPack.Installer.DOM
 					.WithID(MissionDomMapper.Services.Profile)
 					.WithName(nameof(MissionDomMapper.Services.Profile))
 					.WithType(typeof(Guid))
-					.WithIsOptional(false)
+					.WithIsOptional(true)
 					.WithModule(ServiceManagementModuleId)
 					.WithDefinitions(new[] { new DomDefinitionId(new Guid(ServiceProfileDefinitionId)) })
 					.WithTooltip("The unique identifier of the profile associated with the service."))

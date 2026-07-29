@@ -790,7 +790,7 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 				};
 				if (services.ServiceID != default)
 				{
-					_servicesSection.AddOrUpdateValue<string>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.Services.ServiceID, Convert.ToString(services.ServiceID));
+					_servicesSection.AddOrUpdateValue<Guid>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.Services.ServiceID, services.ServiceID);
 				}
 
 				if (services.Name != default)
@@ -800,7 +800,7 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 
 				if (services.Profile != default)
 				{
-					_servicesSection.AddOrUpdateValue<string>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.Services.Profile, Convert.ToString(services.Profile));
+					_servicesSection.AddOrUpdateValue<Guid>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.Services.Profile, services.Profile);
 				}
 
 				instance.Sections.Add(_servicesSection);
