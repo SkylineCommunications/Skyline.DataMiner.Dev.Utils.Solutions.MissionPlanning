@@ -5,9 +5,9 @@
     <Nullable>disable</Nullable>
     <AssemblyName>Skyline.DataMiner.Dev.Utils.Solutions.MissionPlanning</AssemblyName>
     <RootNamespace>Skyline.DataMiner.Solutions.MissionPlanning</RootNamespace>
-    <PackageVersion>1.0.3-dsa2</PackageVersion>
-    <Version>1.0.3-dsa2</Version>
-	  <AssemblyVersion>1.0.3.3</AssemblyVersion>
+    <PackageVersion>1.0.4-reverdsdm</PackageVersion>
+    <Version>1.0.4-reverdsdm</Version>
+	  <AssemblyVersion>1.0.4.0</AssemblyVersion>
     <PackageTags>Skyline;DataMiner</PackageTags>
     <PackageProjectUrl>https://skyline.be</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -33,8 +33,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Skyline.DataMiner.SDM" Version="1.0.3" />
-    <PackageReference Include="Skyline.DataMiner.SDM.SourceGenerator.Runtime" Version="1.0.3" />
+    <PackageReference Include="Skyline.DataMiner.SDM" Version="1.0.1" />
+    <PackageReference Include="Skyline.DataMiner.SDM.SourceGenerator.Runtime" Version="1.0.1" />
     <PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="2.2.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

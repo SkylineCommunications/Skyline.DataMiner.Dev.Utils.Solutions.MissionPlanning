@@ -67,7 +67,8 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Administr
 			var objects = createObjects.Where(obj => !existing.Contains(obj.Identifier)).ToDictionary(obj => obj.Identifier);
 			foreach (var batch in createObjects.Select(ToInstance).Batch(helper.DomInstances.MaxAmountBulkOperation))
 			{
-				helper.DomInstances.TryCreateOrUpdate(batch.ToList(), out var result);
+				//helper.DomInstances.TryCreateOrUpdate(batch.ToList(), out var result);
+				var result = helper.DomInstances.CreateOrUpdate(batch.ToList());
 				foreach (var failure in result.UnsuccessfulIds)
 				{
 					failures.Add(failure.Id.ToString(), new CrudFailedException(result.TraceDataPerItem[failure]));
@@ -119,7 +120,8 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Administr
 			var objects = items.ToDictionary(obj => obj.Identifier);
 			foreach (var batch in items.Select(ToInstance).Batch(helper.DomInstances.MaxAmountBulkOperation))
 			{
-				helper.DomInstances.TryCreateOrUpdate(batch.ToList(), out var result);
+				//helper.DomInstances.TryCreateOrUpdate(batch.ToList(), out var result);
+				var result = helper.DomInstances.CreateOrUpdate(batch.ToList());
 				foreach (var failure in result.UnsuccessfulIds)
 				{
 					exceptionBuilder.AddFailed(objects[failure.Id.ToString()], new CrudFailedException(result.TraceDataPerItem[failure]));
@@ -287,7 +289,9 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Administr
 			var objects = updateObjects.Where(obj => existing.Contains(obj.Identifier)).ToDictionary(obj => obj.Identifier);
 			foreach (var batch in updateObjects.Select(ToInstance).Batch(helper.DomInstances.MaxAmountBulkOperation))
 			{
-				helper.DomInstances.TryCreateOrUpdate(batch.ToList(), out var result);
+				//helper.DomInstances.TryCreateOrUpdate(batch.ToList(), out var result);
+				var result = helper.DomInstances.CreateOrUpdate(batch.ToList());
+
 				foreach (var failure in result.UnsuccessfulIds)
 				{
 					failures.Add(failure.Id.ToString(), new CrudFailedException(result.TraceDataPerItem[failure]));
@@ -348,7 +352,9 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Administr
 			var objects = deleteObjects.ToDictionary(obj => obj.Identifier);
 			foreach (var batch in deleteObjects.Select(ToInstance).Batch(helper.DomInstances.MaxAmountBulkOperation))
 			{
-				helper.DomInstances.TryDelete(batch.ToList(), out var result);
+				//helper.DomInstances.TryDelete(batch.ToList(), out var result);
+				var result = helper.DomInstances.CreateOrUpdate(batch.ToList());
+
 				foreach (var failure in result.UnsuccessfulIds)
 				{
 					exceptionBuilder.AddFailed(objects[failure.Id.ToString()], new CrudFailedException(result.TraceDataPerItem[failure]));
