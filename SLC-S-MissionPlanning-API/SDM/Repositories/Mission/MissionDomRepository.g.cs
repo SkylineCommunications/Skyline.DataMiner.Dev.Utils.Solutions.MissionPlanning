@@ -651,7 +651,7 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 				{
 					Identifier = _servicesSection.ID.Id.ToString()
 				};
-				var _servicesserviceid = _servicesSection.GetValue<string>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.Services.ServiceID);
+				var _servicesserviceid = _servicesSection.GetValue<Guid>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.Services.ServiceID);
 				if (_servicesserviceid != null)
 				{
 					services.ServiceID = System.Guid.Parse(Convert.ToString(_servicesserviceid.Value));
@@ -663,7 +663,7 @@ namespace Skyline.DataMiner.Solutions.MissionPlanning.SDM.Repositories.Mission
 					services.Name = _servicesname.Value;
 				}
 
-				var _servicesprofile = _servicesSection.GetValue<string>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.Services.Profile);
+				var _servicesprofile = _servicesSection.GetValue<Guid>(Skyline.DataMiner.Solutions.MissionPlanning.SDM.Models.MissionDomMapper.Services.Profile);
 				if (_servicesprofile != null)
 				{
 					services.Profile = System.Guid.Parse(Convert.ToString(_servicesprofile.Value));
