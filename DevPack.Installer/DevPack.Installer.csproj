@@ -17,17 +17,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Skyline.DataMiner.Core.AppPackageInstaller" Version="4.0.0" />
+		<PackageReference Include="Skyline.DataMiner.Core.AppPackageInstaller" Version="4.3.0" />
 		<PackageReference Include="Skyline.DataMiner.Dev.Automation" Version="10.6.3" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Skyline.DataMiner.CICD.CSharpAnalysis.Analyzer" Version="2.1.2">
+		<PackageReference Include="Skyline.DataMiner.CICD.CSharpAnalysis.Analyzer" Version="2.2.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Skyline.DataMiner.SDM.SourceGenerator.Runtime" Version="1.0.3" />
-		<PackageReference Include="Skyline.DataMiner.Utils.DOM" Version="10.5.2.8" />
+		<PackageReference Include="Skyline.DataMiner.SDM.SourceGenerator.Runtime" Version="1.0.5" />
+		<PackageReference Include="Skyline.DataMiner.Utils.DOM" Version="10.6.1.1" />
 		<PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="2.2.3">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
